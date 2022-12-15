@@ -1,0 +1,513 @@
+@import "./vars.scss";
+
+// CSS RESET
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    //font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+//FONT
+* {
+    font-family: sans-serif;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.5em;
+}
+h3 {
+    font-size: 1.2em;
+}
+
+.fs-18 {
+    font-size: 1.125rem;
+}
+
+.fs-20 {
+    font-size: 1.25rem;
+}
+
+.fs-24{
+    font-size: 1.5em;
+}
+
+.fs-32 {
+    font-size: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 1.5em;
+}
+
+.heading-container {
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    img {
+        margin-right: 0.5em;
+        width: 42px;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 0px;
+    }
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.blue-text {
+    color: $colorPrimary;
+}
+
+//GLOBAL
+body {
+    background-color: $bodyColor;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0px auto;
+    padding: 0px 40px;
+}
+
+.flex {
+    display: flex;
+    
+    &.space-around {
+        justify-content: space-around;
+    }
+    
+    &.align-center {
+        align-items: center;
+    }
+    
+    &.justify-center {
+        justify-content: center;
+    }
+
+    &.justify-between {
+        justify-content: space-between;
+    }
+
+    &.justify-start {
+        justify-content: flex-start;
+    }
+
+    &.column{
+        flex-direction: column;
+    }
+
+    &.wrap{
+        flex-wrap: wrap;
+    }
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+label {
+    color: $colorLabel;
+    margin-bottom: 0.5em;
+}
+
+input,
+select,
+textarea {
+    border-radius: $BorderRadiusInput;
+    border: $BorderInput;
+    box-shadow: $inputShadow;
+    background-color: $colorWhite;
+    font-size: 1em;
+    padding: 0.8em 1.2em;
+    margin-bottom: 1.5em;
+    display: block;
+
+    &:focus {
+        outline: unset;
+    }
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    width: 100%;
+    .btn {
+        width: 100%;
+    }
+}
+
+.hover {
+    cursor: pointer;
+}
+
+
+.rooms-wrapper {
+    padding: 1rem 0;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.pending{
+    background-color: $colorYellow;
+}
+.canceled{
+    background-color: $colorRed;
+}
+.accepted{
+    background-color: $colorGreen;
+}
+
+.btn {
+    white-space: nowrap;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    background: none;
+    background-color: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.15s ease-out;
+    border-radius: $BorderRadiusInput;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    position: relative;
+    box-shadow: $inputShadow;
+    
+    img {
+        margin: -0.25rem 0;
+        margin-right: 0.25rem;
+    }
+
+    &.outline{
+        border: $BorderInput;
+    }
+
+    .count{
+        position: absolute;
+        right: 25px;
+    }
+
+    &:hover {
+        background-color: $colorSecondary;
+    }
+
+    &.primary, &.active {
+        background-color: $colorPrimary;
+        color: $colorWhite !important;
+
+        &.outline{
+            border-color: $colorPrimary !important;
+        }
+
+        img {
+            filter: brightness(0) invert(1);
+        }
+
+        &:hover {
+            background-color: rgba($colorPrimary, 0.9);
+        }
+    }
+    &.secondary {
+        background-color: $colorSecondary;
+        
+        &:hover {
+            background-color: rgba($colorPrimary, 0.15);
+        }
+    }
+    
+    &.warning {
+        background-color: $colorRed;
+        color: $colorWhite;
+        // margin-top: 1%;
+        &:hover {
+            background-color: rgba($colorRed, 0.9);
+        }
+        img {
+            filter: brightness(0) invert(1);
+        }
+    }
+    
+    &.grey {
+        background-color: $colorLabel;
+        color: $colorWhite;
+        border-radius: 4% 0 0 4%;
+        margin-bottom: 0.5em;
+        &:hover {
+            background-color: rgba($colorLabel, 0.9);
+        }
+    }
+
+
+    &.success {
+        background-color: $colorGreen;
+        color: $colorWhite;
+        border-radius: 0 4% 4% 0;
+        margin-bottom: 0.5em;
+        &:hover {
+            background-color: rgba($colorGreen, 0.9);
+        }
+        img {
+            filter: brightness(0) invert(1);
+        }
+    }
+
+    &.yellow {
+        background-color: $colorYellow;
+        color: $colorWhite;
+
+        &:hover {
+            background-color: rgba($colorYellow, 0.9);
+        }
+    }
+
+}
+
+.checkboxes{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    background-color: $colorSecondary;
+    box-shadow: $insetShadow;
+    margin-bottom: 1em;
+    gap: 15px;
+    -webkit-animation: fade-in 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    margin-top: 0.25em;
+    .checkbox{
+        display: flex;
+        padding: 8px 15px 8px 10px;
+        text-transform: capitalize;
+        width: fit-content;
+        //border: 1px solid $colorLabel;
+        margin-bottom: 0px;
+        cursor: pointer;
+        color: $colorBlack;
+        border: 1px solid $colorLabel;
+        input{
+            display: none;
+        }
+    }      
+}
+
+.tags-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -0.25rem 1rem;
+    min-height: 50px;
+
+    .tag {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 14px;
+        margin: 0 0.25rem 0.25rem;
+        text-transform: capitalize;
+        padding: 0.5em 1em;
+        padding-right: 1.25em;
+        background-color: $colorSecondary;
+        border-radius: 100px;
+        border: $BorderInput;
+        box-shadow: $inputShadow;
+        img{
+            margin-right: 0.25em;
+        }
+    }
+}
+
+// ANIMATIONS
+@-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+input + .status-message, textarea + .status-message {
+    margin-top: -0.5rem;
+}
+
+.datepickers + .status-message {
+    margin-top: -0.75rem;
+}
+
+.status-message {
+    margin: 1rem 0;
+
+    &.error {
+        color: $colorRed;
+    }
+
+    &.success {
+        color: $colorGreen;
+    }
+}

@@ -1,0 +1,40 @@
+@import '../../vars.scss';
+
+.react-datepicker-popper{
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    .react-datepicker{
+        padding: 1.5em;
+        .react-datepicker__header{
+            background-color: unset;
+            .react-datepicker__current-month{
+                text-transform: capitalize;
+                text-align: center;
+                font-size: 20px;
+                padding: 0px 12px;
+                padding-bottom: 10px;
+            }
+        }
+        .react-datepicker__navigation{
+            top: 20px;
+        }
+        .react-datepicker__day{
+            width: 2rem;
+            line-height: 2rem;
+        }
+        .react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range, .react-datepicker__month-text--selected, .react-datepicker__month-text--in-selecting-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--selected, .react-datepicker__quarter-text--in-selecting-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--selected, .react-datepicker__year-text--in-selecting-range, .react-datepicker__year-text--in-range{
+            background-color: $colorPrimary;
+        }
+        .react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::before, .react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::after{
+            border-bottom-color: #fff;
+        }
+    }
+}
+
+.datepickers{
+    input{
+        margin-bottom: 0px;
+    }
+    label{
+        margin-bottom: 2em;
+    }
+}

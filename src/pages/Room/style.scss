@@ -1,0 +1,112 @@
+@import '../../vars.scss';
+
+.container.room {
+    .details {
+        padding: 1.5rem 0;
+        justify-content: space-between;
+    }
+    
+    .tag{
+        font-size: 16px;
+    }
+
+    .room-details {
+        padding-right: 1.5rem;
+        flex-grow: 1;
+    }
+
+    .room-thumbnail {
+        img {
+            width: 100%;
+            aspect-ratio: 3 / 1;
+            object-fit: cover;
+        }
+    }
+
+    .area-wrapper {
+        color: $colorLabel;
+        
+        img {
+            margin-right: 0.5rem;
+        }
+    }
+
+    .address-wrapper {
+        margin: 1.5rem 0;
+
+        h1 {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.125rem;
+            margin-bottom: 0;
+        }
+
+        img {
+            margin-right: 0.5rem;
+        }
+    }
+
+    .description-wrapper {
+        h2 {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .booking-container {
+        padding: 1.5rem;
+        background-color: $colorWhite;
+
+        .blue-text {
+            margin: 1rem 0;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+
+    .room-user {
+        padding: 1rem 0;
+
+        .avatar {
+            margin-right: 1rem;
+
+            img {
+                width: 60px;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                border-radius: 100%;
+                border: 1px solid $colorLabel;
+            }
+        }
+    }
+
+    .buttons {
+        .btn {
+            white-space: nowrap;
+
+            &:first-child {
+                margin-right: 1rem;
+            }
+
+            &.last-child {
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    .phone {
+        padding: 0.25rem 1rem;
+        font-size: 1.25rem;
+        color: black;
+        opacity: 1;
+        transition: opacity 0.15s ease-in-out;
+
+        img {
+            margin-right: 0.5rem;
+        }
+
+        &:hover {
+           opacity: 0.75;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+.form{
+    max-width: unset;
+}
+
+.create-room {
+    padding-right: 1rem;
+
+    .input-container {
+        .half-width {
+            max-width: calc(50% - 0.5rem);
+            flex-grow: 1;
+
+            input {
+                width: 100%;
+            }
+        }
+        
+        .half-width:first-child {
+            margin-right: 0.5rem;
+        }
+
+        .half-width:last-child {
+            margin-left: 0.5rem;
+        }
+    }
+}
+
+.upload-wrapper {
+    padding-left: 1reM;
+
+    .preview-wrapper {
+        max-width: 100%;
+
+        img {
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+    }
+}
+
+.category-dropdowns{
+    button{
+        margin-top: 0.5em;
+        margin-bottom: 1.5em;
+    }
+    .checkboxes{
+        margin-top: -1.5em;
+    }
+}

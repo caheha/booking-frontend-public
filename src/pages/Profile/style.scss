@@ -1,0 +1,42 @@
+.profile {
+    .resize {
+        border-radius: 50%;
+        border: 1px solid black;
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .buttons-wrapper {
+        margin-top: 1rem;
+    }
+
+    .form-wrapper {
+        flex-grow: 1;
+        max-width: 500px;
+    }
+
+    .imgUpload {
+        max-width: 400px;
+        flex-grow: 1;
+        margin: 0 1rem;
+    }
+
+    .btnDelPic {
+        display: block;
+        margin: 5% 20%;
+    }
+
+    .formRezise {
+        margin: 0 1rem;
+        h3 {
+            margin-top: 2rem;
+        }
+    }
+    input[type="file"] {
+        display: none;
+        visibility: hidden;
+        outline: 0;
+    }
+}

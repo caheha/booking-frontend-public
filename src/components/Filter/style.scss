@@ -1,0 +1,51 @@
+@import '../../vars.scss';
+
+.filter{
+    
+    input, button, select{
+        margin-bottom: 0px;
+    }
+    input[type="search"]{
+        min-width: 250px;
+    }
+    button{
+        max-width: 250px;
+        min-width: min-content;
+    }
+    .top{
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        grid-gap: 24px;
+        margin-bottom: 1em;
+    }
+
+    .bot{
+        label{
+            font-size: 14px;
+        }
+    }
+
+    .btn{
+        justify-content: unset;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .filter {
+        .top{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .filter {
+        .top{
+            input, button, select{
+                width: 100%;
+                max-width: unset;
+            }
+        }
+    }
+}

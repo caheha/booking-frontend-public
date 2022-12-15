@@ -1,0 +1,49 @@
+@import '../../vars.scss';
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1rem;
+    background-color: $modalBackground;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .element {
+        background-color: $colorWhite;
+        max-width: calc(500px - 3rem);
+        max-height: calc(100vh - 5rem);
+        overflow-y: scroll;
+        width: 100%;
+        padding: 1.5rem;
+
+        &::-webkit-scrollbar {
+            display: none;
+            width: 0;
+        }
+
+        .form-select {
+            display: flex;
+            margin-bottom: 2rem;
+
+            .form-title {
+                width: 50%;
+                text-align: center;
+                padding: 1rem;
+                transition: background-color 0.15s ease-out;
+                cursor: pointer;
+
+                &.active {
+                    background-color: $colorSecondary
+                }
+
+                &:hover {
+                    background-color: $colorSecondary
+                }
+            }
+        }
+    }
+}

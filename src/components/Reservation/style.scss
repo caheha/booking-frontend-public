@@ -1,0 +1,141 @@
+@import '../../vars.scss';
+
+.reservation-card {
+    display: flex;
+    background-color: $colorWhite;
+    border-radius: $BorderRadiusCard;
+    overflow: hidden;
+    box-shadow: $cardShadow;
+    margin-bottom: 1em;
+
+    .tags-wrapper{
+        margin-bottom: 0px;
+    }
+
+    &.your-reservation{
+        .room-info{
+            width: 50%;
+        }
+        .time-info{
+            width: 33%;
+        }
+        .btn-container{
+            width: 18%;
+        }
+    }
+    &.request{
+        .room-info{
+            width: 48%;
+        }
+        .time-info{
+            width: 22%;
+        }
+        .btn-container{
+            width: 30%;
+        }
+    }
+    
+    .thumbnail-image{
+        width: 100%;
+        max-width: 20%;
+        object-fit: cover;
+        object-position: center;
+        cursor: pointer;
+        aspect-ratio: 16/9;
+    }
+
+    .details{
+        padding: 24px;
+        width: 100%;
+        display: flex;
+        gap: 3%;
+        justify-content: space-between;
+        .room-info{
+            .reservation-title{
+                .city{
+                    padding-right: 0.5em;
+                    margin-bottom: 0.25em;
+                }
+                .status{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: calc(126px - 1em);
+                    padding: 0.5em 0.5em;
+                    border-radius: $BorderRadiusInput;
+                    color: $colorWhite;
+                    text-transform: capitalize;
+                    font-weight: 600;
+                    margin-bottom: 0.25em;
+                }
+            }
+            .address{
+                margin-bottom: 1em;
+            }
+            .user-info{
+                .avatar{
+                    height: 64px;
+                    width: 64px;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 100%;
+                    margin-right: 1em;
+                    border: 1px solid $colorLabel;
+                }
+            }
+        }
+        .time-info{
+            .from-to{
+                gap: 0.5em 2em;
+                padding-bottom: 0.5em;
+                .from, .to{
+                    p{
+                        padding-bottom: 4px;
+                    }
+                }
+            }
+            .total{
+                margin-right: 0.5em;
+            }
+        }
+        .btn-container{
+            min-width: 126px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.5em;
+            .btn{
+                border-radius: $BorderRadiusInput;
+                margin-bottom: 0px;
+                img{
+                    margin-right: 0px;
+                    margin-left: -10px;
+                }
+                &.success{
+                    border-top-right-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                }
+                &.warning{
+                    border-top-left-radius: 0px;
+                    border-bottom-left-radius: 0px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .reservation-card{
+        flex-direction: column;
+        .thumbnail-image{
+            max-width: 100% !important;
+        }
+        .details{
+            flex-direction: column;
+            gap: 1em;
+            > div{
+                width: 100% !important;
+            }
+        }
+    }
+}

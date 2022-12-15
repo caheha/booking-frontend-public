@@ -1,0 +1,62 @@
+@import '../../vars.scss';
+
+.room-card {
+    background-color: $colorWhite;
+    border-radius: $BorderRadiusCard;
+    overflow: hidden;
+
+    &:hover {
+        .thumbnail-image {
+            transform: scale(1.05);
+        }
+    }
+    
+    .thumbnail {
+        overflow: hidden;
+
+        .thumbnail-image {
+            transition: 0.15s ease-in-out;
+            display: block;
+            width: 100%;
+            aspect-ratio: 53 / 30;
+            object-fit: cover;
+
+            &.blur {
+                overflow: hidden;
+                filter: grayscale(1);
+            }
+        }
+    }
+    
+    .details {
+        padding: 1.5rem;
+
+        .location-wrapper {
+            img {
+                margin-right: 0.5rem;
+            }
+        }
+
+        .flex-between {
+            margin-top: 1.5rem;
+
+            .area-label {
+                color: $colorLabel;
+            }
+        }
+    }
+
+    .buttons {
+        .btn:first-child {
+            border-top-right-radius: 0px;
+            border-top-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        .btn:last-child {
+            border-top-right-radius: 0px;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+    }
+}

@@ -1,0 +1,87 @@
+@import '../../vars.scss';
+
+header{
+    padding: 1em 0em;
+    margin-bottom: 1em;
+    nav{
+        position: relative; 
+        button{
+            font-weight: 600;
+            font-size: 16px;
+        }
+        button:not(:last-of-type){
+            margin-right: 1.5em;
+        }
+        
+    }
+    
+    button{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        background-color: unset;
+        border: unset;
+        padding: 0;
+        margin: 0;
+        &:not(.logout){
+            justify-content: center;
+            img{
+                width: 35px;
+            }
+        }
+    }
+
+    .dropdown{
+        position: absolute;
+        right: 0px;
+        top: 35px;
+        padding: 20px 15px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease;
+        border-radius: $BorderRadiusCard;
+        background-color: $colorWhite;
+        z-index: 999;
+
+        li{
+            border-radius: $BorderRadiusCard;
+            a, button{
+                display: flex;
+                align-items: center;
+                background: unset;
+                border: unset;
+                font-size: 16px;
+                margin: 0;
+                padding: 5px 10px;
+                color: $colorBlack;
+                font-weight: 600;
+                width: calc(100% - 20px);
+                img{
+                    margin-right: 3px;
+                }
+            }
+            &.divider{
+                height: 1px;
+                background-color: $colorBlack;
+                opacity: 0.25;
+                box-sizing: content-box;
+                background-clip: content-box;
+                padding: 5px;
+            }
+            &:hover:not(.divider){
+                background-color: $colorSecondary;
+            }
+        }
+        li:not(:last-of-type){
+            margin-bottom: 0px;
+        }
+    }
+
+    .menu-dropdown{
+        position: relative;
+    }
+
+    .menu-dropdown:hover .dropdown, .dropdown:hover{
+        display: block;
+    }
+}
+
