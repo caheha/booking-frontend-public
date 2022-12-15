@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchYourReservation } from "../../store/reservation/reservation-actions";
 import { YourCard } from "../../components";
+import './style.scss';
 import moment from 'moment';
 
 export default function Reservations() {
@@ -30,51 +31,46 @@ export default function Reservations() {
                 <h1>Reservationer</h1>
             </div>
             <div className="reservations-wrapper">
-                <div>
-                    
-                    { incomingReservations.length ? incomingReservations.map((reservation, index) => {
-                        return (
-                            <>
-                                <h2>Kommende reservationer</h2>
+                { incomingReservations.length ? 
+                    <div>
+                        <h2>Kommende reservationer</h2>
+                        {incomingReservations.map((reservation, index) => {
+                            return (
                                 <YourCard key={index} reservation = {reservation} />
-                            </>
-                        )
-                    }) : <></>}
-                </div>
-                <div>
-                    
-                    { activeReservations.length ? activeReservations.map((reservation, index) => {
-                        return (
-                            <>
-                                <h2>Aktive reservationer</h2>
+                            )
+                        })}
+                    </div> : <></>
+                }
+                { activeReservations.length ? 
+                    <div>
+                        <h2>Aktive reservationer</h2>
+                        {activeReservations.map((reservation, index) => {
+                            return (
                                 <YourCard key={index} reservation = {reservation} />
-                            </>
-                        )
-                    }) : <></>}
-                </div>
-                <div>
-                    
-                    { expiredReservations.length ? expiredReservations.map((reservation, index) => {
-                        return (
-                            <>
-                                <h2>Tidligere reservationer</h2>
+                            )})
+                        }
+                    </div> : <></>
+                }
+                { expiredReservations.length ? 
+                    <div>
+                        <h2>Tidligere reservationer</h2>
+                        {expiredReservations.map((reservation, index) => {
+                            return (
                                 <YourCard key={index} reservation = {reservation} />
-                            </>
-                        )
-                    }) : <></>}
-                </div>
-                <div>
-                    
-                    { canceledReservations.length ? canceledReservations.map((reservation, index) => {
-                        return (
-                            <>
-                                <h2>Afviste reservationer</h2>
+                            )})
+                        }
+                    </div> : <></>
+                }
+                { canceledReservations.length ? 
+                    <div>
+                        <h2>Afviste reservationer</h2>
+                        {canceledReservations.map((reservation, index) => {
+                            return (
                                 <YourCard key={index} reservation = {reservation} />
-                            </>
-                        )
-                    }) : <></>}
-                </div>
-                    
+                            )})
+                        }
+                    </div> : <></>
+                }                   
             </div>
             </section>
         </>
